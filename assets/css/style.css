@@ -400,6 +400,7 @@
 		font-weight: 500;
 		transition: all 0.2s ease;
 		white-space: nowrap;
+		margin: 0 15px 0 0;
 	}
 
 	.time-toggle button:hover:not(.active),
