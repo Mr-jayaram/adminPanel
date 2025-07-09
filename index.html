@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard</title>
+      <link rel="stylesheet" href="assets/css/style.css">
+      <!-- Bootstrap CSS for Layout Utilities -->
+      <link href="assets/css/bootstrap.css" rel="stylesheet" >
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <!-- ApexCharts -->
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+   </head>
+   <body>
+      <nav class="sidebar" id="sidebar">
+         <div class="sidebar-header">
+            <a href="#" class="logo">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.62 2.38a2.5 2.5 0 0 1 2.76 0l8.25 4.6a2.5 2.5 0 0 1 1.37 2.18v9.68a2.5 2.5 0 0 1-1.37 2.18l-8.25 4.6a2.5 2.5 0 0 1-2.76 0l-8.25-4.6A2.5 2.5 0 0 1 1 18.84V9.16a2.5 2.5 0 0 1 1.37-2.18z"></path>
+                  <path d="m12 15.5-5.25-2.92"></path>
+                  <path d="m12 15.5 5.25-2.92"></path>
+                  <path d="m12 15.5-5.25 2.92"></path>
+                  <path d="m12 15.5 5.25 2.92"></path>
+                  <path d="m12 4.5-5.25 2.92"></path>
+                  <path d="m12 4.5 5.25 2.92"></path>
+               </svg>
+               Admin
+            </a>
+         </div>
+         <ul class="sidebar-menu">
+            <li class="menu-header">Dashboards</li>
+            <li class="menu-item active"><a href="#" class="menu-link"><i class="bi bi-house-door-fill"></i> Dashboards</a></li>
+            <li class="menu-header">Web Apps</li>
+            <li class="menu-item"><a href="#" class="menu-link"><i class="bi bi-grid-fill"></i> Apps</a></li>
+            <!-- MODIFIED FOR BOOTSTRAP COLLAPSE -->
+            <li class="menu-item">
+               <a href="#nested-menu" class="menu-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="nested-menu">
+               <i class="bi bi-folder-fill"></i><span>Employee</span><i class="bi bi-chevron-right arrow"></i>
+               </a>
+               <ul class="submenu collapse" id="nested-menu">
+                  <li><a href="#" class="submenu-link">Add Employee</a></li>
+                  <li><a href="#" class="submenu-link">Nested-2</a></li>
+               </ul>
+            </li>
+            <li class="menu-header">Crafted</li>
+            <!-- MODIFIED FOR BOOTSTRAP COLLAPSE -->
+            <li class="menu-item">
+               <a href="#auth-menu" class="menu-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="auth-menu">
+               <i class="bi bi-shield-lock-fill"></i><span>Authentication</span><i class="bi bi-chevron-right arrow"></i>
+               </a>
+               <ul class="submenu collapse" id="auth-menu">
+                  <li><a href="#" class="submenu-link">Login</a></li>
+                  <li><a href="#" class="submenu-link">Register</a></li>
+               </ul>
+            </li>
+            <!-- MODIFIED FOR BOOTSTRAP COLLAPSE -->
+            <li class="menu-item">
+               <a href="#error-menu" class="menu-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="error-menu">
+               <i class="bi bi-exclamation-triangle-fill"></i><span>Error</span><i class="bi bi-chevron-right arrow"></i>
+               </a>
+               <ul class="submenu collapse" id="error-menu">
+                  <li><a href="#" class="submenu-link">404 Error</a></li>
+                  <li><a href="#" class="submenu-link">500 Error</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <!-- The rest of the page body is unchanged -->
+      <div class="page-container" id="pageContainer">
+         <header class="top-header d-flex align-items-center justify-content-between px-3 px-md-4">
+            <div class="d-flex align-items-center gap-3"><button class="sidebar-toggle" id="sidebar-toggle"><i class="bi bi-list"></i></button><i class="bi bi-search header-icon d-none d-md-block"></i></div>
+            <div class="d-flex align-items-center gap-3">
+               <i class="bi bi-translate header-icon"></i>
+               <i class="bi bi-moon-stars header-icon" id="darkModeToggle"></i>
+               <i class="bi bi-grid header-icon d-none d-sm-block"></i>
+               <div class="dropdown">
+                  <a href="#" class="header-icon notification" data-bs-toggle="dropdown" aria-expanded="false" id="notificationToggle"><i class="bi bi-bell"></i><span class="badge">5</span></a>
+                  <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2" style="width: 300px;">
+                     <li>
+                        <h6 class="dropdown-header">Notifications (5 New)</h6>
+                     </li>
+                     <li>
+                        <a class="dropdown-item rounded" href="#">
+                           <div class="fw-bold">New message from Support</div>
+                           <small class="text-muted">2 minutes ago</small>
+                        </a>
+                     </li>
+                     <li>
+                        <a class="dropdown-item rounded" href="#">
+                           <div class="fw-bold text-primary">Product 'X' is out of stock!</div>
+                           <small class="text-muted">1 hour ago</small>
+                        </a>
+                     </li>
+                     <li>
+                        <a class="dropdown-item rounded" href="#">
+                           <div>New user registered.</div>
+                           <small class="text-muted">Yesterday</small>
+                        </a>
+                     </li>
+                     <li>
+                        <hr class="dropdown-divider">
+                     </li>
+                     <li><a class="dropdown-item text-center rounded" href="#">View all notifications</a></li>
+                  </ul>
+               </div>
+               <i class="bi bi-arrows-fullscreen header-icon d-none d-sm-block" id="fullscreenToggle"></i>
+               <div class="user-profile dropdown">
+                  <a href="#" data-bs-toggle="dropdown" aria-expanded="false"><img src="https://i.pravatar.cc/150?u=jackmiller" alt="User Avatar" id="userAvatarToggle"></a>
+                  <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                     <li><a class="dropdown-item rounded d-flex align-items-center" href="#"><i class="bi bi-person-circle me-2"></i> Profile</a></li>
+                     <li><a class="dropdown-item rounded d-flex align-items-center" href="#"><i class="bi bi-gear-fill me-2"></i> Settings</a></li>
+                     <li>
+                        <hr class="dropdown-divider">
+                     </li>
+                     <li><a class="dropdown-item rounded d-flex align-items-center" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                  </ul>
+               </div>
+            </div>
+         </header>
+         <main class="main-content p-3 p-md-4">
+            <div class="page-header d-flex justify-content-between align-items-center flex-wrap gap-3 mb-2">
+               <div>
+                  <h1 class="title">Welcome Back, Jack Miller</h1>
+                  <p class="subtitle">Let's dive in and get things done.</p>
+               </div>
+               <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="date-range"><i class="bi bi-calendar-event"></i><span>May, 01 2024 to May, 30 2024</span></div>
+                  <button class="export-btn"><i class="bi bi-upload"></i>Export report</button>
+               </div>
+            </div>
+            <section class="row g-3 mb-3">
+               <div class="col-sm-6 col-xl-3">
+                  <div class="card stat-card p-4 h-100">
+                     <div class="stat-card-header mb-2">
+                        <span class="stat-card-title">Page Views</span>
+                        <div class="stat-card-icon icon-green"><i class="bi bi-eye"></i></div>
+                     </div>
+                     <p class="stat-card-value mb-2">4,678</p>
+                     <div class="stat-card-footer"><a href="#">Total page views</a><span class="stat-change positive"><i class="bi bi-arrow-up"></i> 11.54%</span></div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xl-3">
+                  <div class="card stat-card p-4 h-100">
+                     <div class="stat-card-header mb-2">
+                        <span class="stat-card-title">Total Sales</span>
+                        <div class="stat-card-icon icon-purple"><i class="bi bi-cart"></i></div>
+                     </div>
+                     <p class="stat-card-value mb-2">32,981</p>
+                     <div class="stat-card-footer"><a href="#">View all sales</a><span class="stat-change positive"><i class="bi bi-arrow-up"></i> 0.29%</span></div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xl-3">
+                  <div class="card stat-card p-4 h-100">
+                     <div class="stat-card-header mb-2">
+                        <span class="stat-card-title">Total Revenue</span>
+                        <div class="stat-card-icon icon-orange"><i class="bi bi-currency-dollar"></i></div>
+                     </div>
+                     <p class="stat-card-value mb-2">$1.43M</p>
+                     <div class="stat-card-footer"><a href="#">Complete revenue</a><span class="stat-change positive"><i class="bi bi-arrow-up"></i> 3.45%</span></div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xl-3">
+                  <div class="card stat-card p-4 h-100">
+                     <div class="stat-card-header mb-2">
+                        <span class="stat-card-title">Profit By Sale</span>
+                        <div class="stat-card-icon icon-blue"><i class="bi bi-box-seam"></i></div>
+                     </div>
+                     <p class="stat-card-value mb-2">$645</p>
+                     <div class="stat-card-footer"><a href="#">Total profit earned</a><span class="stat-change positive"><i class="bi bi-arrow-up"></i> 0.18%</span></div>
+                  </div>
+               </div>
+            </section>
+            <section class="row g-3 mb-3">
+               <div class="col-lg-4">
+                  <div class="card p-4 h-100">
+                     <div class="mb-4 border-0 p-0">
+                        <h2 class="card-title">Visitors Report</h2>
+                     </div>
+                     <div class="visitors-stats mb-4">
+                        <div class="visitor-stat-item"><span class="label">This Week</span><span class="value">14,642</span><span class="stat-change positive">0.64% <i class="bi bi-caret-up-fill"></i></span></div>
+                        <div class="visitor-stat-item"><span class="label">Last Week</span><span class="value">12,326</span><span class="stat-change negative">5.31% <i class="bi bi-caret-down-fill"></i></span></div>
+                     </div>
+                     <div id="visitorsChart"></div>
+                  </div>
+               </div>
+               <div class="col-lg-8">
+                  <div class="card p-4 h-100">
+                     <div class="mb-4 border-0 p-0">
+                        <h2 class="card-title">Order Statistics</h2>
+                        <div class="time-toggle" id="orderStatsTimeToggle"><button class="active" data-mode="day">Day</button><button data-mode="week">Week</button><button data-mode="month">Month</button><button data-mode="year">Year</button></div>
+                     </div>
+                     <div id="orderStatisticsChart"></div>
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="card p-4 h-100">
+                     <div class="border-0 p-0">
+                        <h2 class="card-title">Top Selling categories</h2>
+                     </div>
+                     <div id="topCategoriesChart"></div>
+                     <ul class="category-list mt-4">
+                        <li class="category-item">
+                           <div class="category-info">
+                              <span class="category-dot" style="background-color: var(--purple-color);"></span>
+                              <div class="category-details"><span class="name">Electronics</span><span class="change stat-change positive">Increased by 0.64% <i class="bi bi-graph-up-arrow"></i></span></div>
+                           </div>
+                           <div class="category-sales">1,754 <span class="sales-label">Sales</span></div>
+                        </li>
+                        <li class="category-item">
+                           <div class="category-info">
+                              <span class="category-dot" style="background-color: var(--orange-color);"></span>
+                              <div class="category-details"><span class="name">Accessories</span><span class="change stat-change negative">Decreased by 2.75% <i class="bi bi-graph-down-arrow"></i></span></div>
+                           </div>
+                           <div class="category-sales">1,234 <span class="sales-label">Sales</span></div>
+                        </li>
+                        <li class="category-item">
+                           <div class="category-info">
+                              <span class="category-dot" style="background-color: var(--green-color);"></span>
+                              <div class="category-details"><span class="name">Home Appliances</span><span class="change stat-change positive">Increased by 1.54% <i class="bi bi-graph-up-arrow"></i></span></div>
+                           </div>
+                           <div class="category-sales">878 <span class="sales-label">Sales</span></div>
+                        </li>
+                        <li class="category-item">
+                           <div class="category-info">
+                              <span class="category-dot" style="background-color: var(--blue-color);"></span>
+                              <div class="category-details"><span class="name">Beauty Products</span></div>
+                           </div>
+                           <div class="category-sales">270 <span class="sales-label">Sales</span></div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-8">
+                  <div class="card p-4 h-100">
+                     <div class=" mb-4 border-0 p-0">
+                        <h2 class="card-title">Latest Transactions</h2>
+                        <div class="table-filter-toggle" id="transactionFilter"><button class="active" data-filter="all">All</button><button data-filter="completed">Completed</button><button data-filter="pending">Pending</button><button data-filter="processing">Processing</button></div>
+                     </div>
+                     <div class="table-responsive">
+                        <table class="data-table" id="transactionsTable">
+                           <thead>
+                              <tr>
+                                 <th>Order ID</th>
+                                 <th>Customer Name</th>
+                                 <th>Date</th>
+                                 <th>Amount</th>
+                                 <th>Status</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr data-status="completed">
+                                 <td>#87654</td>
+                                 <td>Alice Johnson</td>
+                                 <td>2024-07-05</td>
+                                 <td>$120.00</td>
+                                 <td><span class="status-badge completed">Completed</span></td>
+                              </tr>
+                              <tr data-status="pending">
+                                 <td>#87653</td>
+                                 <td>Bob Williams</td>
+                                 <td>2024-07-05</td>
+                                 <td>$45.50</td>
+                                 <td><span class="status-badge pending">Pending</span></td>
+                              </tr>
+                              <tr data-status="processing">
+                                 <td>#87652</td>
+                                 <td>Charlie Brown</td>
+                                 <td>2024-07-04</td>
+                                 <td>$300.75</td>
+                                 <td><span class="status-badge processing">Processing</span></td>
+                              </tr>
+                              <tr data-status="completed">
+                                 <td>#87651</td>
+                                 <td>Diana Prince</td>
+                                 <td>2024-07-04</td>
+                                 <td>$89.99</td>
+                                 <td><span class="status-badge completed">Completed</span></td>
+                              </tr>
+                              <tr data-status="refunded">
+                                 <td>#87650</td>
+                                 <td>Eve Adams</td>
+                                 <td>2024-07-03</td>
+                                 <td>$65.00</td>
+                                 <td><span class="status-badge refunded">Refunded</span></td>
+                              </tr>
+                              <tr data-status="pending">
+                                 <td>#87649</td>
+                                 <td>Frank Green</td>
+                                 <td>2024-07-03</td>
+                                 <td>$210.00</td>
+                                 <td><span class="status-badge pending">Pending</span></td>
+                              </tr>
+                              <tr data-status="completed">
+                                 <td>#87648</td>
+                                 <td>Grace Hopper</td>
+                                 <td>2024-07-02</td>
+                                 <td>$55.20</td>
+                                 <td><span class="status-badge completed">Completed</span></td>
+                              </tr>
+                              <tr data-status="completed">
+                                 <td>#87647</td>
+                                 <td>Harry Kane</td>
+                                 <td>2024-07-02</td>
+                                 <td>$199.00</td>
+                                 <td><span class="status-badge completed">Completed</span></td>
+                              </tr>
+                              <tr data-status="processing">
+                                 <td>#87646</td>
+                                 <td>Ivy Queen</td>
+                                 <td>2024-07-01</td>
+                                 <td>$75.00</td>
+                                 <td><span class="status-badge processing">Processing</span></td>
+                              </tr>
+                              <tr data-status="pending">
+                                 <td>#87645</td>
+                                 <td>Jack Black</td>
+                                 <td>2024-07-01</td>
+                                 <td>$15.00</td>
+                                 <td><span class="status-badge pending">Pending</span></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      <style>
+         .card{
+         border: none;
+         }
+      </style>
+      <!-- jquert -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <!-- Bootstrap JS Bundle -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="assets/js/script.js"></script>
+      
+   </body>
+</html>
